@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Visualizer from './components/Visualizer'
 
-
 const App = () => {
   return (
     <div>

@@ -13,6 +13,7 @@ const lodash = require('lodash');
 //   logLevel: 0,
 // });
 
+
 // const MainElectronReloadWebpackPlugin = createElectronReloadWebpackPlugin({
 //   // Path to `package.json` file with main field set to main process file path, or just main process file path
 //   path: path.join(__dirname, './src/main/main.ts'),

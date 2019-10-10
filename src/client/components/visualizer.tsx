@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
-
 const Visualizer = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
