@@ -2,18 +2,58 @@
   "name": "producttest",
   "version": "1.0.0",
   "description": "Production Test",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "rimraf dist && cross-env NODE_ENV=development webpack --watch --progress --colors & cross-env NODE_ENV=development",
+    "start": "electron ./dist/main.bundle.js",
+    "dev": "electron ./dist/main.bundle.js",
+    "prod": "rimraf dist && cross-env NODE_ENV=production webpack --progress --colors",
+    "build": "tsc && cp ./src/client/index.html",
+    "build:watch": "npm run build -- --watch",
+    "build:mac": "electron-builder build --mac --x64"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BryV38/productTest.git"
   },
-  "author": "",
+  "author": "Bry Villa and no one else",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BryV38/productTest/issues"
   },
-  "homepage": "https://github.com/BryV38/productTest#readme"
+  "homepage": "https://github.com/BryV38/productTest#readme",
+  "devDependencies": {
+    "@types/d3": "^5.7.2",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "copy-pkg-json-webpack-plugin": "0.0.38",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "electron": "^6.0.3",
+    "electron-builder": "^21.2.0",
+    "electron-connect": "^0.6.3",
+    "electron-connect-webpack-plugin": "^0.1.1",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-installer-dmg": "^3.0.0",
+    "electron-prebuilt": "^1.4.13",
+    "electron-reload": "^1.5.0",
+    "electron-reload-webpack-plugin": "^2.0.4",
+    "lodash": "^4.17.15",
+    "rimraf": "^3.0.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.0.4",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "@material-ui/icons": "^4.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "scale": "0.0.7",
+    "three": "^0.109.0"
+  }
 }
